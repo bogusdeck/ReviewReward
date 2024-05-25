@@ -41,7 +41,7 @@ const page = () => {
                         </svg>
                     </span>
 
-                    <h2 class="mt-4 text-lg subfont-semibold  text-gray-700 dark:text-white">Email</h2>
+                    <h2 class="mt-4 text-lg subfont-semibold  text-white">Email</h2>
                     <p class="mt-2 text-white subfont-semibold dark:text-gray-400">We would love to help</p>
                     <p class="mt-2 text-blue-500 dark:text-blue-400 subfont-semibold ">rndreward@gmail.com</p>
                 </div>
