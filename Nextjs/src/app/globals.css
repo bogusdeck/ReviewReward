@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Denton';
+  src: url('/fonts/Denton-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Black';
+  src: url('/fonts/Gilroy-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Medium';
+  src: url('/fonts/Gilroy-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: url('/fonts/Gilroy-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Light';
+  src: url('/fonts/Gilroy-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Semibold';
+  src: url('/fonts/Gilroy-Semibold.ttf') format('truetype');
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.myfont {
+  font-family: 'Denton', serif; 
+}
+
+.subfont {
+  font-family: 'Gilroy', serif; 
+}
+
+.subfont-bold {
+  font-family: 'Gilroy-Bold', serif; 
+}
+
+.subfont-black {
+  font-family: 'Gilroy-Black', serif; 
+}
+
+.subfont-medium {
+  font-family: 'Gilroy-Medium', serif; 
+}
+
+.subfont-light {
+  font-family: 'Gilroy-Light', serif; 
+}
+
+
+.subfont-semibold {
+  font-family: 'Gilroy-Semibold', serif; 
+}
+
+
+
+.body {
+  background-color: #000000;
+}
+
+.scrolltext {
+  font-size: 5vw;
+  letter-spacing: -.01em;
+  line-height: 100%;
+  margin: 0;
+  padding: 50px;
+  
+  width: 100%;
+  color: rgb(182, 182, 182, 0.2);
+  background: linear-gradient(to right, #b6b6b6, #b6b6b6) no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 0%;
+  transition: background-size cubic-bezier(.1,.5,.5,1) 0.5s;
+  
+
+  border-bottom: 1px solid #2F2B28;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+
+

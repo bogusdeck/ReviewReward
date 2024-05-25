@@ -1,0 +1,353 @@
+.mobile-scroll {
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.scroll-full-screen-wrapper {
+    width: 100%;
+}
+
+.scroll-full-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mobile-mockup-wrapper {
+    width:50%
+}
+
+@media (max-width: 640px) {
+    .mobile-mockup-wrapper {
+        width: 10%;
+    }
+}
+
+.mobile-mockup {
+    position: sticky;
+    top: 150px;
+    transform: translateX(30%);
+    width: 350px;
+    height: 600px;
+    box-shadow: var(--mobile-box-shadow);
+    border-radius: 46px;
+    padding: 16px 14px;
+    max-height: 100vh;
+}
+
+.mobile-mockup-screen {
+    background-color: var(--mobile-bg);
+    overflow: hidden;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.mobile-screen-img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.screen-text {
+    opacity: 0;
+    padding-bottom: 80px;
+}
+
+.text-visible {
+    opacity: 1;
+    transition: 0.75s;
+}
+
+.screen-heading {
+    font-size: 105px;
+    font-weight: 700;
+    line-height: 105px;
+}
+
+.screen-description {
+    font-size: 20px;
+}
+
+@media all and (max-width: 1279px) {
+    .mobile-scroll {
+        padding-bottom: 30px;
+    }
+
+    .mobile-mockup {
+        width: 272px;
+        height: 480px;
+    }
+
+    .screen-heading {
+        font-size: 70px;
+        line-height: 70px;
+    }
+
+    .mobile-mockup {
+        transform: translateX(10%);
+    }
+
+    .screen-description {
+        font-size: 18px;
+       
+    }
+}
+
+@media all and (max-width: 767px) {
+    .mobile-mockup {
+        width: 272px;
+        height: 480px;
+    }
+
+    .screen-heading {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .scroll-full-screen-wrapper {
+        width: 100%;
+    }
+}
+
+.slide-in-right {
+    -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+
+@-webkit-keyframes slide-in-right {
+    0% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+.scale-in-bottom {
+    -webkit-animation: scale-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: scale-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+
+@-webkit-keyframes scale-in-bottom {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in-bottom {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 1;
+    }
+}
+
+
+.max-width {
+    margin: auto;
+    max-width: 70%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.flex {
+    display: flex;
+}
+
+.absolute-center {
+    justify-content: center;
+    align-items: center;
+}
+
+
+.photo-section {
+    height: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-size: cover;
+}
+
+.photo-section-child {
+    padding: 240px 0px 180px;
+}
+
+.photo-section-heading {
+    font-size: 100px;
+    line-height: 96px;
+    font-weight: 700;
+    max-width: 700px;
+}
+
+.photo-section-subheading {
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 700;
+    max-width: 630px;
+    margin-top: 16px;
+}
+
+.photo-section-description {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    max-width: 630px;
+    margin-bottom: 40px;
+    margin-top: 200px;
+}
+
+
+
+@media all and (max-width: 1279px) {
+    .max-width {
+        max-width: 80%;
+    }
+
+    .photo-section-heading {
+        max-width: 670px;
+    }
+
+    .photo-section-child {
+        padding: 100px 0px;
+    }
+
+    .footer {
+        font-size: 32px;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .max-width {
+        max-width: 90%;
+    }
+
+    .non-mobile {
+        display: none !important;
+    }
+
+    .photo-section-heading {
+        font-size: 65px;
+        line-height: 58px;
+    }
+
+    .photo-section-subheading {
+        font-size: 18px;
+        line-height: 24px;
+        margin-top: 26px;
+    }
+
+    .photo-section-description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 500px;
+    }
+
+    .photo-section-child {
+        padding: 195px 0px 90px;
+    }
+
+    .footer {
+        font-size: 20px;
+    }
+}
+
+@media all and (min-width: 766px) {
+    .only-mobile {
+        display: none !important;
+    }
+}
+
+.brands-love {
+    background-color: var(--white-bg);
+    color: var(--bg-black);
+    padding: 60px 0px;
+}
+
+.brands-love-heading {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.brands-love-banner {
+    background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/brands-desktop.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    height: 50px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+@media all and (max-width: 767px) {
+    .brands-love-heading {
+        font-size: 18px;
+    }
+
+    .brands-love-banner {
+        background-image: url(https://web-images.credcdn.in/_next/assets/images/home-page/brands-mobile.png);
+        background-size: contain;
+        height: 240px;
+        margin-top: 35px;
+        background-position: left center;
+    }
+}
+
+
+:root {
+    --bg-black: #000000;
+    --text: #f8f8f8;
+    --mobile-box-shadow: #1E1E1E 0px -5px 6px 0px inset,
+        #0000003d 4px 6px 11px 1px inset;
+    --mobile-bg: #1E1E1E;
+    --white-bg: #ffffff;
+
+}
