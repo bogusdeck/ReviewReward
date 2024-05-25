@@ -123,7 +123,7 @@ const PostReview = () => {
     formData.append("shoppingLink", shoppingLink);
 
     try {
-      const response = await fetch("http://localhost:5000/api/review", {
+      const response = await fetch("https://reviewreward-production.up.railway.app/api/review", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

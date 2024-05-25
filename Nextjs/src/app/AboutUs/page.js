@@ -26,7 +26,7 @@ const page = () => {
             <div>
                 <p class="subfont-bold text-blue-500 dark:text-blue-400 ">Contact us</p>
 
-                <h1 class="mt-2 text-2xl subfont-black  md:text-3xl dark:text-white ">Get in touch</h1>
+                <h1 class="mt-2 text-2xl subfont-black  md:text-3xltext-white ">Get in touch</h1>
 
                 <p class="mt-3 subfont-light ">Mail us for more Queries.</p>
             </div>
@@ -42,7 +42,7 @@ const page = () => {
                     </span>
 
                     <h2 class="mt-4 text-lg subfont-semibold  text-gray-700 dark:text-white">Email</h2>
-                    <p class="mt-2 text-gray-500 subfont-semibold dark:text-gray-400">We would love to help</p>
+                    <p class="mt-2 text-white subfont-semibold dark:text-gray-400">We would love to help</p>
                     <p class="mt-2 text-blue-500 dark:text-blue-400 subfont-semibold ">rndreward@gmail.com</p>
                 </div>
 
@@ -56,13 +56,13 @@ const page = () => {
                         </svg>
                     </span>
 
-                    <h2 class="mt-4 text-lg subfont-semibold  text-gray-700 dark:text-white">Office</h2>
-                    <p class="mt-2 text-gray-500 dark:text-gray-400 subfont-semibold ">You can also visit</p>
+                    <h2 class="mt-4 text-lg subfont-semibold text-white">Office</h2>
+                    <p class="mt-2 text-white subfont-semibold ">You can also visit</p>
                     <p class="mt-2 text-blue-500 dark:text-blue-400 subfont-semibold ">Dilshad Colony ,दिलशाद कॉलोनी Delhi, 110095</p>
                 </div>
 
                 <div>
-                    <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                    <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -70,9 +70,9 @@ const page = () => {
                         </svg>
                     </span>
 
-                    <h2 class="mt-4 text-lg subfont-semibold  text-gray-700 dark:text-white">Phone</h2>
-                    <p class="mt-2 text-gray-500 subfont-semibold  dark:text-gray-400">Mon-Fri from 9am to 6pm.</p>
-                    <p class="mt-2 text-blue-500 subfont-semibold  dark:text-blue-400">+91-8957392057</p>
+                    <h2 class="mt-4 text-lg subfont-semibold  text-white">Phone</h2>
+                    <p class="mt-2 text-white subfont-semibold ">Mon-Fri from 9am to 6pm.</p>
+                    <p class="mt-2 text-blue-500 subfont-semibold ">+91-8957392057</p>
                 </div>
             </div>
         </div>
