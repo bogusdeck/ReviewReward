@@ -24,7 +24,7 @@ const Page = () => {
   return (
     <div className="h-screen w-screen subfont font-semibold">
       <div className="flex flex-col items-center justify-center m-6">
-        <div className="text-white text-lg m-5 mb-20">JOURNEY OF MULTIPLE REWARDS BEGINS HERE!!!!!</div>
+        <div className="text-white text-lg m-5 mb-5 myfont">JOURNEY OF MULTIPLE REWARDS BEGINS HERE!!!!!</div>
 
         {!user ? (
           <div className="w-1/3 flex flex-col items-center justify-evenly text-white mt-6 h-full">

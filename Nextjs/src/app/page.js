@@ -40,6 +40,12 @@ const Page = () => {
             <div className="text-[16px] md:text-lg lg:text-xl text-white tracking-[0.5px]">
               So What's stopping you
             </div>
+            <a className="inline-flex mt-4" href="/PostReview">
+              <span className="h-10 text-sm flex items-center justify-center uppercase font-semibold px-2 border border-white hover:bg-black hover:text-white transition duration-500 ease-in-out subfont">Post review</span>
+              <span className="h-10 w-10 flex-shrink-0 flex items-center justify-center border border-l-0 border-white hover:bg-black hover:text-white transition duration-500 ease-in-out">
+                <svg aria-hidden="true" focusable="false" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" className="h-3 w-3 svg-inline--fa fa-chevron-right fa-w-8 fa-9x"><path fill="currentColor" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z" /></svg>
+              </span>
+            </a>
           </div>
         </div>
       </div>
@@ -84,7 +90,7 @@ const Page = () => {
 
       <section className="bg-[url('https://web-images.credcdn.in/v2/_next/assets/images/landing/desktop/cta-fold-final.png')] w-screen bg-cover min-h-screen flex">
         <div className="grid grid-cols-2">
-        <div col-span-1="true">.</div>
+          <div col-span-1="true">.</div>
 
 
           <div className="col-span-1 flex flex-col items-center justify-center text-end w-11/12">
@@ -101,57 +107,23 @@ const Page = () => {
                 of the users on the products.
               </p>
             </div>
-            
+
             <div className="subfont flex items-end justify-end text-end">
-            <a href="/AboutUs" className="subfont text-blue-600 hover:text-blue-80  text-[14px] md:text-[18px] lg:text-[22px]">Learn more</a>
+              <a href="/AboutUs" className="subfont text-blue-600 hover:text-blue-80  text-[14px] md:text-[18px] lg:text-[22px]">Learn more</a>
             </div>
 
-            <Button href="/PostReview" className="subfont flex items-end justify-end text-end bg-black text-white mt-2 border-none">Post Review!</Button>
-
+            <a className="inline-flex mt-4" href="/PostReview">
+              <span className="h-10 text-sm flex items-center justify-center uppercase font-semibold px-2 border border-black md:border-white text-black md:text-white hover:bg-white hover:text-black transition duration-500 ease-in-out subfont">Post review</span>
+              <span className="h-10 w-10 flex-shrink-0 flex items-center justify-center border border-l-0 border-black md:border-white text-black md:text-white hover:bg-white hover:text-black transition duration-500 ease-in-out">
+                <svg aria-hidden="true" focusable="false" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" className="h-3 w-3 svg-inline--fa fa-chevron-right fa-w-8 fa-9x"><path fill="currentColor" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z" /></svg>
+              </span>
+            </a>
+           
           </div>
         </div>
 
       </section>
-      {/* <section className="bg-[url('https://web-images.credcdn.in/v2/_next/assets/images/landing/desktop/cta-fold-final.png')] w-screen min-h-screen flex flex-col gap-16 items-center justify-center text-center ">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-          <div className="max-w-screen-lg sm:text-lg text-white">
-            <div className="subfont">
-              <h2 className="mb-4 text-4xl font-bold text-white">
-                Helping users for better shopping and product experience
-                <span className="font-extrabold"></span>
-              </h2>
-            </div>
-            <div className="subfont">
-              <p className="mb-4 font-light">
-                Exciting rewards for every review you post. Reward Review makes
-                the service provider understand the customers and the response
-                of the users on the products.
-              </p>
-            </div>
-            <div className="subfont">
-              <a
-                href="/AboutUs"
-                className="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700"
-              >
-                Learn more
-                <svg
-                  className="ml-1 w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>  */}
-      <section>
+           <section>
         <BrandsLove />
       </section>
     </>
