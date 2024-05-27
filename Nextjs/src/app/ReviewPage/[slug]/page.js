@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
@@ -28,30 +28,33 @@ const ReviewPage = ({ params }) => {
 
   return (
     <div className="review-page text-white flex flex-col items-center">
-      <h2 className="text-2xl subfont-bold mb-4 text-center">Review Details</h2>
+      <h2 className="text-3xl m-6 font-bold text-center">Review Details</h2>
       {review ? (
-        <div className="review-details flex flex-col items-center">
-          <p className="text-center"><strong>Brand:</strong> {review.brand}</p>
-          <p className="text-center"><strong>Category:</strong> {review.category}</p>
+        <div className="review-details grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+          <div className="m-3">
           {review.images && review.images.length > 0 && (
             <img
-              className="my-4 w-92 h-92 rounded-xl object-cover"
-              src={review.images[0]}
-              alt={review.productName}
+            className="w-full h-full rounded-xl object-cover"
+            src={review.images[0]}
+            alt={review.productName}
             />
           )}
-          <p className="subfont-light text-center"><strong>Product Review:</strong> {review.productReview}</p>
-          <p className="subfont-light text-center"><strong>Product Name:</strong> {review.productName}</p>
-          <p className="subfont-light text-center"><strong>Purchase Date:</strong> {review.purchaseDate}</p>
-          <p className="subfont-light text-center"><strong>Purchase Price:</strong> ${review.purchasePrice}</p>
-          <p className="subfont-light text-center"><strong>User Email:</strong> {review.userEmail}</p>
+          </div>
+          <div className="flex flex-col items-start justify-start m-3 ">
+            <p className="subfont-semibold text-[25px] md:text-left">{review.productname}</p>
+            <p className="subfont my-2">{review.brand}</p>
+            <p className="subfont my-2">{review.category}</p>
+            <p className="subfont-light border border-white p-2">{review.productReview}</p>
+            <p className="subfont-medium my-3"><span>Purchase Date:</span> {review.purchaseDate}</p>
+            <p className="font-light text-center md:text-left"><span>Purchase Price:</span> ${review.purchasePrice}</p>
+            <p className="font-light text-center md:text-left">{review.userEmail}</p>
+          </div>
         </div>
       ) : (
         <p>Loading review...</p>
       )}
     </div>
   );
-  
 };
 
 export default ReviewPage;
