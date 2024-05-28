@@ -16,7 +16,7 @@ const Footer = () => {
                 <Image src={Logo}
           height={50}
           />
-                <p className="font-bold p-3 text-xl text-white subfont-bold tracking-wide">Review Reward</p>
+                <p className="font-bold p-3 text-xl text-white subfont-bold tracking-wide">ReviewReward</p>
             </a>
           </div>
           <div className="grid grid-cols-2 gap-10 sm:gap-6 sm:grid-cols-3 subfont tracking-wider">

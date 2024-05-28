@@ -38,7 +38,7 @@ const Header = () => {
           height={50}
           />
           <div className="flex flex-wrap align-content-evenly mt-1">
-            <span className="subfont-bold text-[23px] ">REVIEW REWARD</span>
+            <span className="subfont-bold text-[23px] ">ReviewReward</span>
           </div>
         </a>
 
