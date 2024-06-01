@@ -40,14 +40,14 @@ const ReviewPage = ({ params }) => {
             />
           )}
           </div>
-          <div className="flex flex-col items-start justify-start m-3 ">
-            <p className="subfont-semibold text-[25px] md:text-left">{review.productname}</p>
-            <p className="subfont my-2">{review.brand}</p>
-            <p className="subfont my-2">{review.category}</p>
-            <p className="subfont-light border border-white p-2">{review.productReview}</p>
-            <p className="subfont-medium my-3"><span>Purchase Date:</span> {review.purchaseDate}</p>
-            <p className="font-light text-center md:text-left"><span>Purchase Price:</span> ${review.purchasePrice}</p>
-            <p className="font-light text-center md:text-left">{review.userEmail}</p>
+          <div className="flex flex-col items-start justify-start m-3 space-y-3">
+            <p className="subfont-semibold text-[25px] md:text-[40px] md:text-left">{review.productname}</p>
+            <p className="subfont-bold md:text-[20px]">{review.brand}</p>
+            <p className="subfont md:text-[20px]">{review.category}</p>
+            <p className="subfont-light border border-white p-2 text-[20px] md:text-[25px]">{review.productReview}</p>
+            <p className="subfont md:text-[20px]"><span>Purchase Date:</span> {review.purchaseDate}</p>
+            <p className="subfont md:text-[20px]"><span>Purchase Price:</span> ₹ {review.purchasePrice}</p>
+            <p className="font-light text-[12px] md:text-[14px]">uploaded by {review.userEmail}</p>
           </div>
         </div>
       ) : (
