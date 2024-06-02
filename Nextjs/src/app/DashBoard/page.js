@@ -1,18 +1,17 @@
-"use client";
+"use client"
 import { useEffect, useState } from 'react';
-import ReviewCard from '@/src/components/ReviewCard';
-import Sidebar from '@/src/components/SideBar';
-import { UserAuth } from '../context/AuthContext';
-import { collection, addDoc, query, where, getDocs, doc, updateDoc } from "firebase/firestore";
-import { db, storage } from "../firebase";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { Button } from 'antd';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import ReviewCard from '@/src/components/ReviewCard';
 import BrandSwiper from '@/src/components/BrandSwiper';
-import { Button } from 'antd';
+import Sidebar from '@/src/components/SideBar';
+import { UserAuth } from '../context/AuthContext';
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 
 const Dashboard = () => {
   const { user } = UserAuth(); // Access user object from the context
@@ -23,16 +22,13 @@ const Dashboard = () => {
     const fetchReviews = async () => {
       if (user) {
         const userEmail = user.email;
-        const reviewsData=[]
-        const temp = [];
+        const reviewsData = [];
         const q = query(collection(db, "reviews"), where("userEmail", "==", userEmail));
-
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
           reviewsData.push({ docId: doc.id, ...doc.data() });
         });
         setReview(reviewsData);
-        console.log(review);
       }
     };
 
@@ -51,14 +47,9 @@ const Dashboard = () => {
         const temp = [];
         const q = query(collection(db, "users"), where("email", "==", userEmail));
         const querySnapshot = await getDocs(q);
-        console.log("Number of documents retrieved:", querySnapshot.size);
-
         querySnapshot.forEach((doc) => {
-          console.log(doc.id, " => ", doc.data());
           temp.push(doc.data());
         });
-
-        console.log("Temp array:", temp);
         setUserData(temp);
       } catch (error) {
         console.error("Error fetching user data:", error);
@@ -68,8 +59,14 @@ const Dashboard = () => {
     fetchUser();
   }, [user]);
 
+  const isReviewAvailable = review.length > 0;
+  const isRedeemedRewardsEmpty = !userData[0]?.redeemedRewards || userData[0]?.redeemedRewards.length === 0;
+
   return (
     <div className="text-white flex">
+      <div className="container mx-auto px-4 py-8">
+        {user ? (
+           <div className="text-white flex">
       <div className="container mx-auto px-4 py-8">
         {userData.length > 0 && (
           <div>
@@ -97,6 +94,7 @@ const Dashboard = () => {
               </div>
             )}
             <h1 className="text-3xl font-semibold mb-4">Your Reviews</h1>
+            { isReviewAvailable? (
             <Swiper
                slidesPerView={1} // Set initial slides per view for mobile
                spaceBetween={10}
@@ -124,9 +122,22 @@ const Dashboard = () => {
                   <ReviewCard review={reviewData} />
                 </SwiperSlide>
               ))}
-            </Swiper>
+            </Swiper>):(<div className="grid place-items-center">
+  <p className="text-center text-white mt-10 mb-10">Post your first review and earn rewards</p>
+  <a href="/PostReview" className="border border-white text-white rounded-lg p-3 bg-[#425568] hover:bg-blue-700">
+    POST REVIEW
+  </a>
+</div>
+
+          )}
             <div className=''>
   <h1 className="text-3xl font-semibold mb-4 mt-8">Redeemed rewards</h1>
+  {isRedeemedRewardsEmpty ?(<div className="grid place-items-center">
+  <p className="text-center text-white mt-10 mb-10">Redeem Exciting Rewards</p>
+  <a href="/MarketPlace" className="border border-white text-white rounded-lg p-3 bg-[#425568]">
+    MARKET PLACE
+  </a>
+</div>):(
   <Swiper
      slidesPerView={1} // Set initial slides per view for mobile
      spaceBetween={10}
@@ -154,10 +165,22 @@ const Dashboard = () => {
         <BrandSwiper brand={brand} />
       </SwiperSlide>
     ))}
-  </Swiper>
+  </Swiper>)
+  }
 </div>
 
           </div>
+        )}
+      </div>
+      <Sidebar user={user} />
+    </div>
+        ) : (
+          <div className="grid place-items-center min-h-screen">
+          <p className="text-center text-white mt-10">Login/Singup To View DashBoard</p>
+          <a href="/Login" className="border border-white text-white rounded-lg p-3 bg-[#425568]">
+            Login/Signup
+          </a>
+        </div>
         )}
       </div>
       <Sidebar user={user} />
