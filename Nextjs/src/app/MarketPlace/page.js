@@ -19,7 +19,26 @@ const Marketplace = () => {
 
   const [brands, setBrandsData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const[cuser,setCusers]=useState([])
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const userEmail = user.email;
+        const q = query(collection(db, "users"), where("email", "==", userEmail));
+        const querySnapshot = await getDocs(q);
+    
+        if (!querySnapshot.empty) {
+          const doc = querySnapshot.docs[0];
+          setCusers(doc.data());
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+    
 
+    fetchUser();
+  }, [user]);
   const handleRedeem = async (brandId, brandPrice) => {
     try {
       const userEmail = user.email;
@@ -28,6 +47,10 @@ const Marketplace = () => {
 
       if (!querySnapshot.empty) {
         const doc = querySnapshot.docs[0];
+        const temp=[];
+        temp.push(doc.data())
+        setCusers(temp)
+        console.log(cuser)
         const docRef = doc.ref;
         const currentReviewPoints = doc.data().reviewPoints;
         const redeemedRewards = doc.data().redeemedRewards || [];
@@ -82,8 +105,9 @@ const Marketplace = () => {
       <ToastContainer />
       {user ? ( // Check if user is logged in
         <div>
+          <div className="text-white">Current Review Points: {cuser.reviewPoints}</div>
           <div className="text-3xl subfont-bold text-white text-center mt-4 mb-1 p-4">
-            Marketplace
+            Market Place
           </div>
           <div className="flex items-center justify-center">
             <div className="w-11/12">

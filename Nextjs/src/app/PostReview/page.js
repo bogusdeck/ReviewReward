@@ -37,7 +37,7 @@ async function addDataToFireStore(
       productReview: productReview,
       images: imageUrls,
       userEmail: userEmail,
-      reviewPoint: 100,
+      reviewPoint: 1000,
       shoppingLink: shoppingLink || "", // If not provided, set it to empty string
       reviewPostedDate: new Date()
     });
@@ -215,12 +215,27 @@ const PostReview = () => {
   useEffect(() => {
     fetchUserData(user, setUserData);
   }, [user]);
+  const { users } = UserAuth();
+  if (!user) {
+    return (
+      <div className="flex justify-center h-screen items-center subfont-bold ">
+          <p className="text-white">Login/Sign Up To Post Review</p>
+        <div className="flex justify-center h-screen items-center ">
+      
+         <a href="/Login" className="border border-white text-white rounded-lg p-3 m-2 bg-[#425568] flex items-center justify-center">
+              Login/Signup
+            </a>
+        </div>
+        </div>
+    );
+  }
 
+  // If user is logged in, display the post review form
   return (
     <div className="">
       <ToastContainer />
       <div className="">  
-      <form onSubmit={handleSubmit} className="max-w-4xl p-6 mx-auto rounded-md shadow-md dark:bg-gray-800 mt-20">
+        <form onSubmit={handleSubmit} className="max-w-4xl p-6 mx-auto rounded-md shadow-md dark:bg-gray-800 mt-20">
   <h2 className="text-xl font-bold text-white capitalize dark:text-white text-center mb-4">Product Review</h2>
   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
     <div>
@@ -350,7 +365,6 @@ const PostReview = () => {
     </div>
   </div>
 </form>
-        {message && <p className="bg-black text-white m-4 p-4"> {message} </p>}
       </div>
     </div>
   );
