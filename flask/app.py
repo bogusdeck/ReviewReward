@@ -20,7 +20,6 @@ nltk.download("stopwords")
 app = Flask(__name__)
 CORS(app)
 
-# Cohere LLM
 llm = ChatCohere(cohere_api_key="XjFEJxdARMVU166udeN6mzSzahWQbv1qrrmpNmKa")
 
 prompt = ChatPromptTemplate.from_messages([
