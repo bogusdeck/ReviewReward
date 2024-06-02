@@ -96,8 +96,8 @@ const Marketplace = () => {
         </button>
       </div> */}
 
-      <div class="flex items-center justify-center">
-        <div class="w-11/12">
+      <div className="flex items-center justify-center">
+        <div className="w-11/12">
           <div className="grid grid-cols-3 gap-4 subfont-medium mb-5">
             {brands.map((brand) => (
               <BrandCard key={brand.docId} brand={brand} onRedeem={handleRedeem} />
