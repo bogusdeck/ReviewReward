@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { Flipper, Flipped } from "react-flip-toolkit";
 
-export default function TermsAndConditions(){
+export default function TermsAndConditions() {
   const [flipped, setFlipped] = useState(false);
 
   const toggleFlip = () => {
@@ -10,7 +10,7 @@ export default function TermsAndConditions(){
   };
 
   return (
-    <div className="w-screen h-screen] justify-center ">
+    <div className="relative w-screen h-full text-white flex flex-col bg-cover ">
       <video
         autoPlay
         muted
@@ -25,11 +25,9 @@ export default function TermsAndConditions(){
       <div className="flex justify-center items-center h-screen z-10 relative ">
         <Flipper flipKey={flipped}>
           <Flipped flipId="card">
-            <div className="w-full max-w-xl">
+            <div className="w-full max-w-xl ">
               <div
-                className={` overflow-hidden ${
-                  flipped ? "flipped" : ""
-                }`}
+                className={` overflow-hidden ${flipped ? "flipped" : ""}`}
                 style={{
                   transition: "transform 0.5s",
                   transformStyle: "preserve-3d",
@@ -41,13 +39,15 @@ export default function TermsAndConditions(){
                 }}
               >
                 <div className="px-6 py-4">
-                  <div className="text-xl mb-2 font-bold text-white text-base">Terms & Conditions</div>
-                  <div className="text-white text-base">
+                  <div className="text-xl mb-2 subfont-bold text-white text-base">
+                    Terms & Conditions
+                  </div>
+                  <div className="text-white text-base subfont-medium">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                      tincidunt, urna eu varius blandit, libero turpis iaculis
-                      eros, eget maximus purus eros non lacus. Vivamus nec urna
-                      vulputate, lobortis purus in, feugiat nunc.
+                      Acceptance of Terms By accessing and using
+                      ReviewRewards, you accept and agree to be bound by these
+                      terms and conditions. If you do not agree with any part of
+                      these terms, you must not use our website. 
                     </p>
                     {!flipped && (
                       <button
@@ -62,12 +62,10 @@ export default function TermsAndConditions(){
                 <div className="px-6 py-4">
                   {flipped && (
                     <div>
-                      <p className="text-white text-base">
-                        Mauris auctor justo non libero pulvinar faucibus. Cras
-                        suscipit mi sed nisi convallis, sed rhoncus libero dapibus.
-                        Morbi eget ultrices orci, vel tempus justo. Integer
-                        ullamcorper risus vitae orci ultricies, nec consequat neque
-                        scelerisque.
+                      <p className="text-white text-base subfont-medium">
+                        Brand Offers Offers: Brands provide various offers
+                        and discounts in exchange for reviews and user
+                        engagement.
                       </p>
                       <button
                         onClick={toggleFlip}
@@ -85,4 +83,4 @@ export default function TermsAndConditions(){
       </div>
     </div>
   );
-};
+}

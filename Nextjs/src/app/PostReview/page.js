@@ -106,9 +106,9 @@ const PostReview = () => {
     ],
     Laptops: ["ASUS/ROG", "HP", "ACER", "MSI", "SAMSUNG", "DELL"],
     Smartwatches: ["BOAT", "APPLE", "AMAZEFIT", "SAMSUNG", "ONEPLUS", "HAMMER"],
-    Headphones: ["Brand10", "Brand11", "Brand12"],
-    HomeAppliances: ["Brand13", "Brand14", "Brand15"],
-    ComputerPeripheral: ["Brand16", "Brand17", "Brand18"],
+    Headphones: ["BOSE", "SONY", "BOAT" , "APPLE" , "JBL" ,"JABRA"],
+    HomeAppliances: ["SAMSUNG", "PARASONIC", "VOLTAS" , "CROMA" , "BLUESTAR", "IFB"],
+    ComputerPeripheral: ["RAZER", "CORSAIR", "LOGITECH" , "HYPERX" , "BENQ" , "REDRAGON"],
   };
 
   // Submit form handler
@@ -249,8 +249,8 @@ const PostReview = () => {
         <option value="Laptops">Laptops</option>
         <option value="Smartwatches">Smartwatches</option>
         <option value="Headphones">Headphones</option>
-        <option value="Home Appliances">Home Appliances</option>
-        <option value="Computer Peripheral">Computer Peripheral</option>
+        <option value="HomeAppliances">Home Appliances</option>
+        <option value="ComputerPeripheral">Computer Peripheral</option>
       </select>
     </div>
     {category && (

@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
   };
 
   return (
-        <div className="w-screen h-screen] justify-center bg-cover">
+        <div className="relative w-screen h-full text-white flex flex-col bg-cover">
             <video
         autoPlay
         muted
