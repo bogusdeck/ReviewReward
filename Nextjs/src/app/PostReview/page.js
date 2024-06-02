@@ -1,9 +1,12 @@
 "use client";
+"use client";
 import React, { useState, useContext, useEffect } from "react";
 import { db, storage } from "../firebase";
 import { collection, addDoc, query, where, getDocs, doc, updateDoc, Timestamp } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { UserAuth } from "../context/AuthContext";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 async function addDataToFireStore(
   productname,
@@ -168,7 +171,7 @@ const PostReview = () => {
             setImages([]);
             setShoppingLink("");
 
-            alert("Data added to Firestore DB!!!");
+            toast.success("Review Submitted Successfully!!");
 
             // Update user's review points
             const q = query(collection(db, "users"), where("email", "==", userEmail));
@@ -187,7 +190,7 @@ const PostReview = () => {
           }
           fetchUserData(user, setUserData);
         } else {
-          alert("Review is not original.");
+          toast.error("Review is not original. Try Again!!");
         }
         console.log("Review submitted successfully!!");
       } else {
@@ -198,6 +201,7 @@ const PostReview = () => {
     await handleResponse(response);
   } catch (error) {
     console.error("Error:", error);
+    toast.error("Failed to submit review. Please try again.");
   }
   };
 
@@ -214,6 +218,7 @@ const PostReview = () => {
 
   return (
     <div className="">
+      <ToastContainer />
       <div className="">  
       <form onSubmit={handleSubmit} className="max-w-4xl p-6 mx-auto rounded-md shadow-md dark:bg-gray-800 mt-20">
   <h2 className="text-xl font-bold text-white capitalize dark:text-white text-center mb-4">Product Review</h2>

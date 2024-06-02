@@ -43,13 +43,13 @@ const Header = () => {
         </a>
 
         <div className="flex flex-1 justify-end items-center space-x-4 mr-3">
-          {/* User image and sign out button */}
+          
           {user ? (
             <div className="flex items-center">
               <Link href="/DashBoard">
                 <img
                   className="w-8 h-8 rounded-full"
-                  src={user.photoURL} // Assuming user.photoURL contains the URL of the user's image
+                  src={user.photoURL}
                   alt="User"
                 />
               </Link>
@@ -62,7 +62,7 @@ const Header = () => {
               </button>
             </div>
           ) : (
-            // Login/Signup button
+            
             <Link href="/Login" className="subfont-light">
               Login/Signup
             </Link>
