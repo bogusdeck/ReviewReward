@@ -38,11 +38,9 @@ df1.loc[df1["deceptive"] == "deceptive", "deceptive"] = 0
 df1.loc[df1["deceptive"] == "truthful", "deceptive"] = 1
 df1.dropna(subset=["text"], inplace=True)
 
-# spliting the dataset into features and target
 X = df1["text"]
 Y = np.asarray(df1["deceptive"], dtype=int)
 
-# spliting the dataset into trainin and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, random_state=109)
 
 cv = CountVectorizer()
@@ -55,7 +53,6 @@ nb.fit(X_train_cv, y_train)
 clf = svm.SVC(kernel="linear")
 clf.fit(X_train_cv, y_train)
 
-# save the model and CountVectorizer if the file doesn't exist
 if not os.path.exists("model.pkl"):
     with open("model.pkl", "wb") as f:
         pickle.dump((nb, cv), f)
