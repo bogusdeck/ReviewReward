@@ -172,7 +172,6 @@ const Dashboard = () => {
           </div>
         )}
       </div>
-      <Sidebar user={user} />
     </div>
         ) : (
           <div className="grid place-items-center min-h-screen">
