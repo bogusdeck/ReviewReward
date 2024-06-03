@@ -44,8 +44,12 @@ const BrandSwiper = ({ brand }) => {
             <div className="flex justify-end mt-2">
               <p className="text-gray-600">End Date: {brandItem.brandDate}</p>
             </div>
+            </div>
+            <div className="flex mr-3 justify-end mt-1">
+              <p className="text-gray-600">Coupon Code: {brandItem.couponCode}</p>
+            </div>
           </div>
-        </div>
+        
       ))}
     </div>
   );
