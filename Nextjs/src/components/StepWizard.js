@@ -49,7 +49,7 @@ export default function SettingsPage() {
             {userData.map((userDataItem, index) => (
               <div key={index} className="flex items-center">
                 <img
-                  src={userDataItem.photoURL || "/userprofile.jpg"} // Use user's photo URL if available, otherwise use placeholder image
+                  src={userDataItem.photoURL || "/userprofile.jpg"} 
                   alt="User Profile"
                   className="w-12 h-12 rounded-full mr-4"
                 />

@@ -7,7 +7,7 @@ const ReviewCard = ({ review }) => {
   const router = useRouter();
   
   const handleClick = () => {
-    // Redirect to the review page with the review ID as a URL parameter
+
     router.push(`/ReviewPage/${review.docId}`);
   };
 
@@ -17,7 +17,7 @@ const ReviewCard = ({ review }) => {
 
   const { brand, category, images, productReview, productName, purchaseDate, purchasePrice, userEmail, shoppingLink } = review;
 
-  console.log("ReviewCard received review:", review); // Log the review data
+  console.log("ReviewCard received review:", review); 
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6" onClick={handleClick}>

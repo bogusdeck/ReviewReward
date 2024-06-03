@@ -4,8 +4,8 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 
 const ReviewPage = () => {
-  const { id } = useParams(); // Get the review ID from URL params
-  const [review, setReview] = useState(null); // State to store review data
+  const { id } = useParams(); 
+  const [review, setReview] = useState(null); 
 
   useEffect(() => {
     // Fetch review data from Firestore
@@ -25,7 +25,7 @@ const ReviewPage = () => {
     };
 
     fetchReview();
-  }, [id]); // Fetch review whenever ID changes
+  }, [id]); 
 
   return (
     <div className="review-page">

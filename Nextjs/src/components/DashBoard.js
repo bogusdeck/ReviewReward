@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
-import ReviewCard from '../components/ReviewCard'; // Assuming you have a ReviewCard component
+import ReviewCard from '../components/ReviewCard'; 
 import { UserAuth } from '../app/context/AuthContext';
 
 const Dashboard = () => {
@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     
-    fetch('/api/user/reviews') // You need to define this API route
+    fetch('/api/user/reviews') 
       .then(response => response.json())
       .then(data => setUserReviews(data))
       .catch(error => console.error('Error fetching user reviews:', error));
