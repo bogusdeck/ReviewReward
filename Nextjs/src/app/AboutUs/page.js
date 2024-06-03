@@ -6,7 +6,8 @@ const page = () => {
         <div class="container my-12 py-12 mx-auto px-4 md:px-6 lg:px-12">
 
     <section class="mb-20 text-white text-center">
-        <h3 class="text-5xl mb-12 subfont-bold ">About us</h3>
+        <h3 class="text-5xl mb-12 subfont-bold ">About us
+        </h3>
         <div class="flex flex-wrap">
         <div class="mb-6 lg:mb-0 flex-initial shrink w-full lg:w-5/12 lg:pr-3">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7000.215048360535!2d77.327229!3d28.68643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfbac1bf7ef39%3A0x27c183fb074b7265!2sDilshad%20Colony%2C%20Delhi%2C%20110095!5e0!3m2!1sen!2sin!4v1710622284899!5m2!1sen!2sin"
